@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*THE NAV LINKS WILL HAVE SOME SPACE BETWEEN THEM BY THIS PROPERTY*/
+    padding: 20px 80px;
+    background: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    /*IN BOX SHADOW 0=TOP,5=LEFT,15PX=RADIUS */
+    z-index: 999;
+    position: sticky;
+    /*THE NAVBAR WILL BE STUCK EVEN WHEN WE WILL SCROLL */
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    /* THE POSITION IS SET BCOZ IN #navbar li a.active::after,#navbar li a:hover::after THE SMALL LINE IS THERE BENEATH EACH LINK SO TO POSITION THAT LINE ABSOLUTE TO PARENT THAT IS li THAT'S WHY IT'S POSITION IS SET TO RELATIVE */
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+    /*for smooth changing */
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    /*WHEN WE OPEN OUR WEBSITE THE HOME LINK IS ALREADY HIGHLIGHTED SO IT IS DONE BY THIS ACTIVE CLASS */
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    /*THIS IS FOR THAT SHORT LINE BENEATH THE LINKS */
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+</style>
+<body>
+    <section id="header">
+        <a href="#"><img src="./img/logo.png" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>  
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>  
+            </ul>
+        </div>
+</body>
+</html>
